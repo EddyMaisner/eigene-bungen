@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+<body>
+
+
+<input id="number" type="number"><button onclick="hoch()">Zähler</button>
+
+<table>
+    <tbody>
+        <tr>
+            <td id="menge1">2</td>
+            <td>Eier</td>
+        </tr>
+        <tr>
+            <td id="menge2">300</td>
+            <td>ml</td>
+            <td>Milch</td>
+        </tr>
+        <tr>
+            <td id="menge3">4</td>
+            <td>tl.</td>
+            <td>Zucker</td>
+        </tr>
+        <tr>
+            <td id="menge4" >5</td>
+            <td>Tomaten</td>
+        </tr>
+        <tr>
+            <td id="menge5">60</td>
+            <td>g</td>
+            <td>Koriander</td>
+        </tr>
+    </tbody>
+
+    
+
+
+
+</table>
+<script>
+    function hoch(){
+        let portions = +document.getElementById('number').value;
+        let menge1 = 2;
+        let menge2 = 300;
+        let menge3 = 4;
+        let menge4 = 5;
+        let menge5 = 60;
+
+        document.getElementById('menge1').innerHTML = menge1 * portions;
+        document.getElementById('menge2').innerHTML = menge2 * portions;
+        document.getElementById('menge3').innerHTML = menge3 * portions;
+        document.getElementById('menge4').innerHTML = menge4 * portions;
+        document.getElementById('menge5').innerHTML = menge5 * portions;
+        
+
+
+    }
+</script>
+
+    
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+</style>
+
+<script>
+
+
+
+
+
+
+
+
+    let todos = ['Einkaufen', 'Putzen', 'Kochen', 'Spazieren'];    // Aus arrays Löschen
+
+
+
+
+
+
+
+    function showTodos() {
+        document.getElementById('mylist').innerHTML = '';
+        for (let i = 0; i < todos.length; i++) {  // mit dem kleiner als < todos.length wir gesagt das es so weit ausführen soll wie lang die todo list ist
+            document.getElementById('mylist').innerHTML += `<li>${todos[i]} <a href="#" onclick="deleteTodo(${i})">X </a> </li>`; // hier definiere ich was gelöscht werden soll
+
+        }
+    }
+
+    function addTodo() {
+        let todo = document.getElementById('myInput').value; // wir holen uns das toto aus dem textfeld
+        todos.push(todo); // fügen die Variable dem array hinzu
+        showTodos(); // dann aktualisieren wir mit der function showTodos die ul von unten 
+        document.getElementById('myInput').value = ''; // hiermit löschen wir das Textfeld nach der eingabe 
+    }
+
+
+    function deleteTodo(position){ // Eine neue function um aus dem arrays löschen zu können , difiniert mit position 
+        todos.splice(position, 1); // .splice ist ein lösch function in JS 
+        showTodos(); // Hier aktualisiere ich die Liste und die function mit showTodos(); 
+    }
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+<body onload="showTodos()">
+
+    <ul id="mylist">
+
+    </ul>
+
+    <input id="myInput" type="text"> <button onclick="addTodo()">Hinzufügen</button>
+
+
+</body>
+
+
+
+</html>

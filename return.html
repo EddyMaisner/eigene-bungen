@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+
+
+
+<style>
+
+
+
+</style>
+
+
+
+
+
+
+
+<script>
+
+    function calc(){
+        let number = +document.getElementById('input').value;    // hier wird der text der im 'input' steht ersetzt durch unsere eigabe in den text = .value // die eingegebene Zahl wird einer Variable hinzugefügt namens let number
+        
+
+
+        alert(getResultText(number, powerof2(number)));  // hier wird von inneren klammern nach den äuseren klammern gearbeitet sprich: 1.number 2.number, powerof2 3.getResultText 4. alert
+         
+    }
+
+function powerof2(x){           // hier wird die eingegebene zahl (number wie oben im bild) einer function namens powerof2 zugewiesen und neu difiniert namens (x)
+    return x*x;                 // hier wird eingegebene zahl * eingegebene zahl = (x*x) errechnet und wieder zurückgegeben mit return x*x
+}
+
+
+
+
+function getResultText(zahl, result){ // zahl = 2, result = 4 ergebnis vom eingegebenen ins inputfeld 
+    return `Result of ${zahl}² is ${result}`; // Hier wird ein text augespuckt mit den variablen ${zahl}² is ${result} = Ergebnis von der function ist ein Text: Result of (2zahl)² is (RESULT4)
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+<body>
+    
+    <input type="text" id="input"> <button onclick="calc()">Calc</button>
+    
+     
+    
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

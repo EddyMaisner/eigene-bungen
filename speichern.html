@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+<script>
+
+let names =  [];
+
+function loadName(){
+    name = localStorage.getItem('name')
+    document.getElementById('headline').innerHTML = `Zuletzt war ${name} hier`;
+}
+
+
+
+function saveName(){
+    let name = document.getElementById('input').value;
+    names.push(name);
+    
+    serArray('names', name); // kmit diesem code kannst du variablen speichern
+    document.getElementById('headline').innerHTML = `Hallo ${names}`;
+        
+}
+
+
+function setArray(key,array){
+    localStorage.setItem(key, JSON.stringify(array)); // Einen Array zu speichern
+
+}
+// getArray('names')
+function getArray(key){
+    return JSON.parse(localStorage.getItem(key)); // Einen Array Laden
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+<body>
+    <h1 id="headline"></h1>
+    <button onclick="loadName()" >Wer war zuletzt hier</button>
+    <input id="input" type="text">
+    <button onclick="saveName()">Hinzufügen</button>
+    
+    
+</body>
+
+
+
+
+
+
+
+
+</html>

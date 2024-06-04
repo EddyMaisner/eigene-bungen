@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+
+
+<style>
+
+    body{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+.door{
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+
+}
+
+
+
+
+
+</style>                
+
+
+
+<script>
+
+    function insertDoors(){  // mit der for schleife sagen wir das wir das unter document.get... wiederholen wollen 10mal
+        for(let i = 1;i < 25 ; i++) // wir fangen bei null an und wiederholen es so lange wie es kleiner als 10 ist
+        document.getElementById('body').innerHTML += `<div class ="door">${i}</div>`;
+    }
+     // 1. nach for difinieren wir eine Variable mit let i = 0; hat den wert 0
+     // 2. solange die Variable kleiner als 10 ist ( i < 10; wiederholt sich die document.getElement.... schleife)
+     // 3. Wenn die schleife durchgegangen ist wird der wert um 1 erhöht mit dem befehl i++
+
+</script>
+
+
+
+
+
+
+<body id="body"  onload="insertDoors()">
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>

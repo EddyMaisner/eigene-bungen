@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+</style>
+
+<script>
+    let images = ['./img/rezept-des-tages.jpg', './img/spanish-paella.jpg', './img/wok.jpg', './img/thai.jpg', './img/wok2.jpg'];         // if-Else Abfragen/abzweigungen
+    let currentImage = 0;
+
+    function start() {                                           // function start ruft function showImage auf      
+        let millisecons = +document.getElementById('inputfield').value * 1000;  // Hier können wir dem inputfeld was eingeben.value  namens: inputfield
+
+
+        if (millisecons > 10000) {                          // wenn größer als 10 sekunden soll ein alert kommen
+            alert(' Bitte kleinere Zahl eingeben')
+        } else {             // else bedeutet ansonsten soll das passieren                               // wenn kleiner als 1 sekunde dann soll ein alert kommen
+            if (millisecons < 1000) {
+                alert('Bitte mindestens eine Sekunde als Zeit angeben!'); // hier wird gesagt das falls die zahl unter 1 kommt ein alert kommt mit Bitte midestens eine ..
+
+
+
+            } else {
+                showImage(currentImage);                                // showImage bekommt als Variable das currentImage übergeben mit der Zahl 0 die oben definiert wurde
+                currentImage++;                                         // Die Variable wird um 1 erhöht durch das ++;
+
+                if (currentImage == 5) {   // wenn die Bilder einen gewissen wert haben wie 5 bilder maximal dann soll das bild 0 wieder gegeben werden mit der variable 0
+                    currentImage = 0;
+                }
+
+                setTimeout(start, millisecons);                                // showImage wird erneut aufgerufen und erhält die function start,millisecons 
+            }
+        }
+    }
+
+
+
+
+
+
+    function showImage(i) {                  // hier wird der Wert 0 zugewiesen
+        document.getElementById('image').src = images[i]; // hier zeigen wir das erste Bild an
+    }
+
+
+</script>
+
+
+
+<body>
+
+    <input type="number" id="inputfield" placeholder="Wie viele Sekunden"> <button onclick="start()">Start</button>
+
+
+    <img id="image" src="./img/wok.jpg">
+
+
+
+
+</body>
+
+
+
+
+
+</html>
